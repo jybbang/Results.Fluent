@@ -3,10 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Junyoung Bang</Authors>
-    <Company />
+    <Company>jyb</Company>
     <PackageProjectUrl>https://github.com/jybbang/Results.Fluent</PackageProjectUrl>
     <PackageTags>Result, Results</PackageTags>
     <Version>1.0.1</Version>
+    <RepositoryUrl>https://github.com/jybbang/Results.Fluent</RepositoryUrl>
+    <Copyright></Copyright>
+    <PackageLicenseExpression>https://github.com/jybbang/Results.Fluent/blob/master/LICENSE</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
