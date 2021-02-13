@@ -28,7 +28,10 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1.5.0
         with:
-          dotnet-version: 3.1.406
+          dotnet-version: 3.1.112
+          source-url: https://api.nuget.org/v3/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.PUBLISH_TO_NUGET_ORG}}
         
       - name: Install dependencies
         run: dotnet restore
