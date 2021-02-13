@@ -1,5 +1,5 @@
 using FluentAssertions;
-using FluentResult;
+using Result.Fluent;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 

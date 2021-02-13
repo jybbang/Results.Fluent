@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FluentResult
+namespace Result.Fluent
 {
     public class Result
     {

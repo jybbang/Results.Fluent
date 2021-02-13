@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FluentResult
+namespace Result.Fluent
 {
     public class ResultResponse
        : Enumeration

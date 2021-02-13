@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Result.Fluent", "Result.Fluent\Result.Fluent.csproj", "{454142ED-CBFA-4D04-BFD6-7784B190797D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Result.Fluent.Tests", "Result.Fluent.Tests\Result.Fluent.Tests.csproj", "{7740AD3A-359C-4FF2-95EF-400CD0E06556}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{454142ED-CBFA-4D04-BFD6-7784B190797D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454142ED-CBFA-4D04-BFD6-7784B190797D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454142ED-CBFA-4D04-BFD6-7784B190797D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454142ED-CBFA-4D04-BFD6-7784B190797D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7740AD3A-359C-4FF2-95EF-400CD0E06556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7740AD3A-359C-4FF2-95EF-400CD0E06556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7740AD3A-359C-4FF2-95EF-400CD0E06556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7740AD3A-359C-4FF2-95EF-400CD0E06556}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D428E0BB-3A05-423F-AD1B-15006540BAC2}
+	EndGlobalSection
+EndGlobal
