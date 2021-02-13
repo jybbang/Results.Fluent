@@ -19,6 +19,11 @@ namespace Results.Fluent
             return result;
         }
 
+        public static bool HasMessage(this Result result)
+        {
+            return !string.IsNullOrEmpty(result.Message);
+        }
+
         public static bool IsSuccess(this Result result)
         {
             return result.Succeeded;

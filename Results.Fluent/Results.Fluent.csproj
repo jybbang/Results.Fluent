@@ -6,6 +6,7 @@
     <Company />
     <PackageProjectUrl>https://github.com/jybbang/Results.Fluent</PackageProjectUrl>
     <PackageTags>Result, Results</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
