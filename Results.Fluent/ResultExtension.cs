@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Result.Fluent
+namespace Results.Fluent
 {
     public static class ResultExtension
     {

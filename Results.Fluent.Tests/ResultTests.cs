@@ -2,7 +2,7 @@ using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace Result.Fluent.Tests
+namespace Results.Fluent.Tests
 {
     [TestClass]
     public class ResultTests

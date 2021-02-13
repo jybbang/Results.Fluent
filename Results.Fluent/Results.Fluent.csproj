@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Junyoung Bang</Authors>
     <Company />
-    <PackageProjectUrl>https://github.com/jybbang/Result.Fluent</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/jybbang/Results.Fluent</PackageProjectUrl>
     <PackageTags>Result, Results</PackageTags>
   </PropertyGroup>
 

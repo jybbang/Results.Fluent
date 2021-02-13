@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Result.Fluent
+namespace Results.Fluent
 {
     public abstract class Enumeration : IComparable
     {
