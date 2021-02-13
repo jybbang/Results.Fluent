@@ -1,9 +1,8 @@
 using FluentAssertions;
-using Result.Fluent;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 
-namespace FlientResult.Tests
+namespace Result.Fluent.Tests
 {
     [TestClass]
     public class ResultTests
