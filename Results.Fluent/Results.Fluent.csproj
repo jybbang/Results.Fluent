@@ -9,7 +9,7 @@
     <Version>1.0.1</Version>
     <RepositoryUrl>https://github.com/jybbang/Results.Fluent</RepositoryUrl>
     <Copyright></Copyright>
-    <PackageLicenseExpression>https://github.com/jybbang/Results.Fluent/blob/master/LICENSE</PackageLicenseExpression>
+    <PackageLicenseExpression>https://licenses.nuget.org/MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
