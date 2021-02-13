@@ -21,16 +21,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1.5.0
         with:
-          dotnet-version: 3.1.112
-          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
-        env:
-          NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
+          dotnet-version: 3.1.406
         
       - name: Install dependencies
         run: dotnet restore
@@ -42,12 +40,7 @@ jobs:
         run: dotnet test --no-restore --verbosity normal
        
       - name: Pack
-        run: dotnet pack --no-build --configuration Release FluentResult\FluentResult\FluentResult.csproj --output .
+        run: dotnet pack --no-build --configuration Release FluentResult/FluentResult.csproj --output .
    
       - name: PushNuget
         run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.PUBLISH_TO_NUGET_ORG}} --skip-duplicate
-   
-      - name: PushGithub
-        run: dotnet nuget push *.nupkg --source github --skip-duplicate
-        env:
-         NUGET_AUTH_TOKEN: ${{ github.token }}
