@@ -6,7 +6,7 @@ namespace Results.Fluent
 {
     public class Result
     {
-        public bool Succeeded { get; }
+        public bool Succeeded { get; internal set; }
 
         public string[] Errors { get; }
 
@@ -14,13 +14,15 @@ namespace Results.Fluent
 
         public ResultResponse Response { get; internal set; }
 
-        public bool IsSuccess => Succeeded;
+        public bool IsSucceeded => Succeeded;
 
-        public bool IsFailure => !Succeeded;
+        public bool IsFailed => !Succeeded;
 
         public bool HasMessage => !string.IsNullOrEmpty(Message);
 
         public bool HasError => Errors.Any();
+
+        public bool HasResponse => !(Response is null);
 
         public bool IsBadRequest => Response == ResultResponse.BadRequest;
 

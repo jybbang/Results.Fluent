@@ -15,7 +15,7 @@ namespace Results.Fluent.Tests
 
             // then
             result.Succeeded.Should().BeTrue();
-            result.IsSuccess.Should().BeTrue();
+            result.IsSucceeded.Should().BeTrue();
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace Results.Fluent.Tests
 
             // then
             result.Succeeded.Should().BeFalse();
-            result.IsFailure.Should().BeTrue();
+            result.IsFailed.Should().BeTrue();
         }
 
         [TestMethod]
