@@ -17,27 +17,27 @@ To use, with an `Result` instance :
 
 ```c#
 var result = Result.Success();
-if(result.IsSuccess) return true;
+if(result.IsSucceeded) return true;
 ```
 
 ```c#
 var result = Result.Success().WithMessage("Perfect");
-if(result.IsSuccess && result.HasMessage && result.Message == "Perfect") return true;
+if(result.IsSucceeded && result.HasMessage && result.Message == "Perfect") return true;
 ```
 
 ```c#
 var result = Result.Failure();
-if(result.IsFailure) return false;
+if(result.IsFailed) return false;
 ```
 
 ```c#
 var result = Result.Failure("Can Not Open");
-if(result.IsFailure && result.HasError) return false;
+if(result.IsFailed && result.HasError) return false;
 ```
 
 ```c#
 var result = Result.Failure().NotFound();
-if(result.IsFailure && result.IsNotFound) return false;
+if(result.IsFailed && result.IsNotFound) return false;
 ```
 
 > also try 'BadRequest', 'Unauthorized', 'Forbidden', NotFound', 'NotAllowed', 'Conflict', 'Invalid'
@@ -46,12 +46,12 @@ Or, you can contain some object `Result<TContainer>`
 
 ```c#
 var result = Result<int>.Success(200);
-if(result.IsSuccess && result.Container == 200) return true;
+if(result.IsSucceeded && result.Container == 200) return true;
 ```
 
 ```c#
 var result = Result<int>.Failure().Unauthorized();
-if(result.IsFailure && result.IsUnauthorized) return false;
+if(result.IsFailed && result.IsUnauthorized) return false;
 ```
 
 ## Copyright
