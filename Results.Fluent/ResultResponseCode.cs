@@ -7,6 +7,7 @@ namespace Results.Fluent
     public class ResultResponse
        : Enumeration
     {
+        public static ResultResponse None = new ResultResponse(0, nameof(None));
         public static ResultResponse BadRequest = new ResultResponse(400, nameof(BadRequest));
         public static ResultResponse Unauthorized = new ResultResponse(401, nameof(Unauthorized));
         public static ResultResponse Forbidden = new ResultResponse(403, nameof(Forbidden));

@@ -8,11 +8,11 @@ namespace Results.Fluent
     {
         public bool Succeeded { get; internal set; }
 
-        public string[] Errors { get; }
+        public string[] Errors { get; } = Array.Empty<string>();
 
-        public string Message { get; internal set; }
+        public string Message { get; internal set; } = string.Empty;
 
-        public ResultResponse Response { get; internal set; }
+        public ResultResponse Response { get; internal set; } = ResultResponse.None;
 
         public bool IsSucceeded => Succeeded;
 
@@ -22,7 +22,7 @@ namespace Results.Fluent
 
         public bool HasError => Errors.Any();
 
-        public bool HasResponse => !(Response is null);
+        public bool HasResponse => Response != ResultResponse.None;
 
         public bool IsBadRequest => Response == ResultResponse.BadRequest;
 
@@ -47,7 +47,6 @@ namespace Results.Fluent
         internal Result(bool succeeded)
         {
             Succeeded = succeeded;
-            Errors = Array.Empty<string>();
         }
 
         public static Result Success()
