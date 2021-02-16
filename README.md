@@ -40,6 +40,8 @@ var result = Result.Failure().NotFound();
 if(result.IsFailure && result.IsNotFound) return false;
 ```
 
+> also try 'BadRequest', 'Unauthorized', 'Forbidden', NotFound', 'NotAllowed', 'Conflict', 'Invalid'
+
 Or, you can contain some object `Result<TContainer>`
 
 ```c#
