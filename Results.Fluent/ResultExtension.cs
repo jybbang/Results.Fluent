@@ -19,26 +19,6 @@ namespace Results.Fluent
             return result;
         }
 
-        public static bool HasMessage(this Result result)
-        {
-            return !string.IsNullOrEmpty(result.Message);
-        }
-
-        public static bool IsSuccess(this Result result)
-        {
-            return result.Succeeded;
-        }
-
-        public static bool IsFailure(this Result result)
-        {
-            return !result.Succeeded;
-        }
-
-        public static bool HasError(this Result result)
-        {
-            return result.Errors.Any();
-        }
-
         public static Result BadRequest(this Result result)
         {
             result.Response = ResultResponse.BadRequest;
@@ -121,41 +101,6 @@ namespace Results.Fluent
         {
             result.Response = ResultResponse.Invalid;
             return result;
-        }
-
-        public static bool IsBadRequest(this Result result)
-        {
-            return result.Response == ResultResponse.BadRequest;
-        }
-
-        public static bool IsUnauthorized(this Result result)
-        {
-            return result.Response == ResultResponse.Unauthorized;
-        }
-
-        public static bool IsForbidden(this Result result)
-        {
-            return result.Response == ResultResponse.Forbidden;
-        }
-
-        public static bool IsNotFound(this Result result)
-        {
-            return result.Response == ResultResponse.NotFound;
-        }
-
-        public static bool IsNotAllowed(this Result result)
-        {
-            return result.Response == ResultResponse.NotAllowed;
-        }
-
-        public static bool IsConflict(this Result result)
-        {
-            return result.Response == ResultResponse.Conflict;
-        }
-
-        public static bool IsInvalid(this Result result)
-        {
-            return result.Response == ResultResponse.Invalid;
         }
     }
 }

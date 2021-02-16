@@ -14,6 +14,28 @@ namespace Results.Fluent
 
         public ResultResponse Response { get; internal set; }
 
+        public bool IsSuccess => Succeeded;
+
+        public bool IsFailure => !Succeeded;
+
+        public bool HasMessage => !string.IsNullOrEmpty(Message);
+
+        public bool HasError => Errors.Any();
+
+        public bool IsBadRequest => Response == ResultResponse.BadRequest;
+
+        public bool IsUnauthorized => Response == ResultResponse.Unauthorized;
+
+        public bool IsForbidden => Response == ResultResponse.Forbidden;
+
+        public bool IsNotFound => Response == ResultResponse.NotFound;
+
+        public bool IsNotAllowed => Response == ResultResponse.NotAllowed;
+
+        public bool IsConflict => Response == ResultResponse.Conflict;
+
+        public bool IsInvalid => Response == ResultResponse.Invalid;
+
         internal Result(bool succeeded, IEnumerable<string> errors)
         {
             Succeeded = succeeded;
