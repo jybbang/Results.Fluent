@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,42 @@ namespace Results.Fluent
 {
     public static class ResultExtension
     {
+        public static ActionResult ToActionResult(this Result result)
+        {
+            var actionResult = default(ActionResult);
+
+            if (result.IsFailed)
+            {
+                actionResult = new UnprocessableEntityObjectResult(result.Errors);
+            }
+            else
+            {
+                actionResult = new NoContentResult();
+            }
+
+            return actionResult;
+        }
+
+        public static ActionResult<T> ToActionResult<T>(this Result<T> result)
+        {
+            var actionResult = default(ActionResult);
+
+            if (result.IsFailed)
+            {
+                actionResult = new UnprocessableEntityObjectResult(result.Errors);
+            }
+            else if (result.IsSucceeded)
+            {
+                actionResult = new OkObjectResult(result.Container);
+            }
+            else
+            {
+                actionResult = new NoContentResult();
+            }
+
+            return new ActionResult<T>(actionResult);
+        }
+
         public static Result WithMessage(this Result result, string message)
         {
             result.Message = message;
