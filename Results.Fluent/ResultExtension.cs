@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Results.Fluent
 {
@@ -101,6 +102,16 @@ namespace Results.Fluent
         {
             result.Response = ResultResponse.Invalid;
             return result;
+        }
+
+        public static Task<Result> AsAsync(this Result result)
+        {
+            return Task.FromResult(result);
+        }
+
+        public static Task<Result<TContainer>> AsAsync<TContainer>(this Result<TContainer> result)
+        {
+            return Task.FromResult(result);
         }
     }
 }
