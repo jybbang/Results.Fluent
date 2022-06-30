@@ -95,7 +95,7 @@ namespace Results.Fluent.Tests
             var expect = 100;
 
             // when
-            var result = Result<int>.Success(expect);
+            var result = ValueResult<int>.Success(expect);
 
             // then
             result.Succeeded.Should().BeTrue();
@@ -120,7 +120,7 @@ namespace Results.Fluent.Tests
         public void ShouldHasFailureWithContainerResult()
         {
             // when
-            var result = Result<int>.Failure();
+            var result = ValueResult<int>.Failure();
 
             // then
             result.Succeeded.Should().BeFalse();
@@ -133,7 +133,7 @@ namespace Results.Fluent.Tests
             var expect = "error";
 
             // when
-            var result = Result<int>.Failure(expect);
+            var result = ValueResult<int>.Failure(expect);
 
             // then
             result.Errors.Contains(expect).Should().BeTrue();
@@ -148,7 +148,7 @@ namespace Results.Fluent.Tests
             var expectMessage = "message";
 
             // when
-            var result = Result<int>.Success(expect).WithMessage(expectMessage);
+            var result = ValueResult<int>.Success(expect).WithMessage(expectMessage);
 
             // then
             result.Container.Should().Be(expect);
@@ -161,37 +161,37 @@ namespace Results.Fluent.Tests
             // given
             var expect = 100;
 
-            var result = Result<int>.Success(expect).BadRequest();
+            var result = ValueResult<int>.Success(expect).BadRequest();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.BadRequest);
             result.IsBadRequest.Should().BeTrue();
 
-            result = Result<int>.Success(expect).Unauthorized();
+            result = ValueResult<int>.Success(expect).Unauthorized();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.Unauthorized);
             result.IsUnauthorized.Should().BeTrue();
 
-            result =  Result<int>.Success(expect).Forbidden();
+            result = ValueResult<int>.Success(expect).Forbidden();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.Forbidden);
             result.IsForbidden.Should().BeTrue();
 
-            result =  Result<int>.Success(expect).NotFound();
+            result = ValueResult<int>.Success(expect).NotFound();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.NotFound);
             result.IsNotFound.Should().BeTrue();
 
-            result =  Result<int>.Success(expect).NotAllowed();
+            result = ValueResult<int>.Success(expect).NotAllowed();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.NotAllowed);
             result.IsNotAllowed.Should().BeTrue();
 
-            result =  Result<int>.Success(expect).Conflict();
+            result = ValueResult<int>.Success(expect).Conflict();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.Conflict);
             result.IsConflict.Should().BeTrue();
 
-            result =  Result<int>.Success(expect).Invalid();
+            result = ValueResult<int>.Success(expect).Invalid();
             result.Container.Should().Be(expect);
             result.Response.Should().Be(ResultResponse.Invalid);
             result.IsInvalid.Should().BeTrue();

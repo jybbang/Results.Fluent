@@ -70,11 +70,47 @@ namespace Results.Fluent
         }
     }
 
-    public class Result<TContainer> : Result
+    public class ValueResult<TContainer> : Result where TContainer : notnull
     {
-        public TContainer Container { get; } = default(TContainer);
+        public TContainer Container { get; } = default!;
 
-        internal Result(bool succeeded, IEnumerable<string> errors, TContainer container = default)
+        internal ValueResult(bool succeeded, IEnumerable<string> errors, TContainer container)
+            : base(succeeded, errors)
+        {
+            Container = container;
+        }
+
+        internal ValueResult(bool succeeded, IEnumerable<string> errors)
+            : base(succeeded, errors)
+        {
+        }
+
+        public static ValueResult<TContainer> Success(TContainer container)
+        {
+            return new ValueResult<TContainer>(true, Array.Empty<string>(), container);
+        }
+
+        public static new ValueResult<TContainer> Failure()
+        {
+            return new ValueResult<TContainer>(false, Array.Empty<string>());
+        }
+
+        public static new ValueResult<TContainer> Failure(IEnumerable<string> errors)
+        {
+            return new ValueResult<TContainer>(false, errors);
+        }
+
+        public static new ValueResult<TContainer> Failure(params string[] errors)
+        {
+            return new ValueResult<TContainer>(false, errors);
+        }
+    }
+
+    public class Result<TContainer> : Result where TContainer : class
+    {
+        public TContainer? Container { get; }
+
+        internal Result(bool succeeded, IEnumerable<string> errors, TContainer? container = null)
             : base(succeeded, errors)
         {
             Container = container;

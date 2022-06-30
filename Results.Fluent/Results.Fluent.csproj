@@ -1,19 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Junyoung Bang</Authors>
-    <Company>jyb</Company>
-    <PackageProjectUrl>https://github.com/jybbang/Results.Fluent</PackageProjectUrl>
-    <PackageTags>Result, Results</PackageTags>
-    <Version>1.1.1</Version>
-    <RepositoryUrl>https://github.com/jybbang/Results.Fluent</RepositoryUrl>
-    <Copyright></Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<Authors>Junyoung Bang</Authors>
+		<Company>jyb</Company>
+		<PackageProjectUrl>https://github.com/jybbang/Results.Fluent</PackageProjectUrl>
+		<PackageTags>Result, Results</PackageTags>
+		<Version>1.2</Version>
+		<RepositoryUrl>https://github.com/jybbang/Results.Fluent</RepositoryUrl>
+		<Copyright></Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+	</ItemGroup>
 
 </Project>

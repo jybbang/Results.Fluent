@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Results.Fluent
 {
-    public abstract class Enumeration : IComparable
+    public abstract class Enumeration : IEquatable<Enumeration?>
     {
         public string Name { get; private set; }
 
@@ -16,31 +16,21 @@ namespace Results.Fluent
 
         public override string ToString() => Name;
 
-        public static IEnumerable<T> GetAll<T>() where T : Enumeration =>
-            typeof(T).GetFields(BindingFlags.Public |
-                                BindingFlags.Static |
-                                BindingFlags.DeclaredOnly)
-                     .Select(f => f.GetValue(null))
-                     .Cast<T>();
-
-        public int CompareTo(object other) => Id.CompareTo(((Enumeration)other).Id);
-
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (!(obj is Enumeration otherValue))
-            {
-                return false;
-            }
+            return Equals(obj as Enumeration);
+        }
 
-            var typeMatches = GetType().Equals(obj.GetType());
-            var valueMatches = Id.Equals(otherValue.Id);
-
-            return typeMatches && valueMatches;
+        public bool Equals(Enumeration? other)
+        {
+            return other != null &&
+                   Name == other.Name &&
+                   Id == other.Id;
         }
 
         public override int GetHashCode()
         {
-            int hashCode = 1460282102;
+            var hashCode = 1460282102;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
             hashCode = hashCode * -1521134295 + Id.GetHashCode();
             return hashCode;
