@@ -22,13 +22,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
       - name: Setup .NET Core SDK        
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 3.1.112
+          dotnet-version: 3.0.x
         
       - name: Install dependencies
         run: dotnet restore
